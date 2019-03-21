@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
       # Save the user ID inside the browser cookie
       session[:user_id] = user.id
       redirect_to '/'
+    else
+      render :new
     end
   end
 
