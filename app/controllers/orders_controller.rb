@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @products = retrieve_products(@order.line_items)
   end
 
   def create
@@ -9,6 +10,8 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+      puts "---------order--------"
+      puts order.inspect
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
@@ -54,6 +57,13 @@ class OrdersController < ApplicationController
     end
     order.save!
     order
+  end
+
+  def retrieve_products(items)
+    products = []
+    items.each do |product|
+      products.push Product.find(product[:id])
+    end
   end
 
 end
