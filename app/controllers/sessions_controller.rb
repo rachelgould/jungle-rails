@@ -8,12 +8,12 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       # Save the user ID inside the browser cookie
       session[:user_id] = user.id
-      redirect_to '/login'
+      redirect_to '/'
     end
   end
 
   def destroy
-    session[:user_id] = nil
+    session.delete(:user_id)
     redirect_to '/login'
   end
 end

@@ -6,11 +6,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    puts user_params
+    puts "---------------------"
+    puts @user.errors.inspect
     if @user.save
+      puts "0000000000"
+      puts @user.id
+      puts "0000000000"
       session[:user_id] = @user.id
       redirect_to '/', notice: 'Signed up!'
     else
-      redirect_to '/signup'
+      render :new
     end
   end
 
@@ -20,7 +26,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :name, 
       :email, 
-      :password
+      :password,
+      :password_confirmation
     )
   end
 
