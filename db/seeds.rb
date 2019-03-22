@@ -152,95 +152,87 @@ puts "Re-creating Reviews ..."
 Review.destroy_all
 
 Review.create!({
-  product: 1,
-  user: 1,
+  product_id: 1,
+  user_id: 1,
   description: "OMG I love it!!!",
   rating: 5,
 })
 
 Review.create!({
-  product: 2,
-  user: 1,
+  product_id: 2,
+  user_id: 1,
   description: "It's 'meh'.'",
   rating: 3,
 })
 
 Review.create!({
-  product: 3,
-  user: 1,
+  product_id: 3,
+  user_id: 1,
   description: "Hate it.'",
   rating: 1,
 })
 
 Review.create!({
-  product: 4,
-  user: 1,
+  product_id: 4,
+  user_id: 1,
   description: "Wow!! It got delivered so fast!",
   rating: 4,
 })
 
 Review.create!({
-  product: 5,
-  user: 1,
+  product_id: 5,
+  user_id: 1,
   description: "It broke quickly.",
   rating: 2,
 })
 
 Review.create!({
-  product: 6,
-  user: 1,
+  product_id: 6,
+  user_id: 1,
   description: "Had higher expectations...",
   rating: 1,
 })
 
 Review.create!({
-  product: 7,
-  user: 1,
+  product_id: 7,
+  user_id: 1,
   description: "It's 'meh'.'",
   rating: 3,
 })
 
 Review.create!({
-  product: 8,
-  user: 1,
+  product_id: 8,
+  user_id: 1,
   description: "WOWZA!",
   rating: 5,
 })
 
 Review.create!({
-  product: 9,
-  user: 1,
+  product_id: 9,
+  user_id: 1,
   description: "LOVEIT",
   rating: 5,
 })
 
 Review.create!({
-  product: 10,
-  user: 1,
+  product_id: 10,
+  user_id: 1,
   description: "It's 'meh'.'",
   rating: 3,
 })
 
 Review.create!({
-  product: 11,
-  user: 1,
+  product_id: 11,
+  user_id: 1,
   description: "Great thing I got in the mail!",
   rating: 4,
 })
 
 Review.create!({
-  product: 12,
-  user: 1,
+  product_id: 12,
+  user_id: 1,
   description: "I got it for my birthday and it's great",
   rating: 4,
 })
-
-Review.create!({
-  product: 13,
-  user: 1,
-  description: "It's 'meh'.'",
-  rating: 3,
-})
-
 
 puts "DONE!"
