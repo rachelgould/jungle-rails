@@ -5,8 +5,8 @@ Rails.application.configure do
       :address              => 'smtp.ethereal.email',
       :port                 => 587,
       :domain               => 'ethereal.email',
-      :user_name            => <stan.walker@ethereal.email>,
-      :password             => <vyU6zjY4H2N7KKu1Fd>,
+      :user_name            => 'stan.walker@ethereal.email',
+      :password             => 'vyU6zjY4H2N7KKu1Fd',
       :authentication => 'plain',
       :enable_starttls_auto => true
 }
