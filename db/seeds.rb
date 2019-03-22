@@ -132,5 +132,115 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USER
+
+puts "Creating a starter user ..."
+
+User.destroy_all
+
+User.create!({
+  email: "starter@user.com",
+  password: "dummy",
+  name: "Joe Shmoe"
+})
+
+
+## REVIEWS
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+Review.create!({
+  product: 1,
+  user: 1,
+  description: "OMG I love it!!!",
+  rating: 5,
+})
+
+Review.create!({
+  product: 2,
+  user: 1,
+  description: "It's 'meh'.'",
+  rating: 3,
+})
+
+Review.create!({
+  product: 3,
+  user: 1,
+  description: "Hate it.'",
+  rating: 1,
+})
+
+Review.create!({
+  product: 4,
+  user: 1,
+  description: "Wow!! It got delivered so fast!",
+  rating: 4,
+})
+
+Review.create!({
+  product: 5,
+  user: 1,
+  description: "It broke quickly.",
+  rating: 2,
+})
+
+Review.create!({
+  product: 6,
+  user: 1,
+  description: "Had higher expectations...",
+  rating: 1,
+})
+
+Review.create!({
+  product: 7,
+  user: 1,
+  description: "It's 'meh'.'",
+  rating: 3,
+})
+
+Review.create!({
+  product: 8,
+  user: 1,
+  description: "WOWZA!",
+  rating: 5,
+})
+
+Review.create!({
+  product: 9,
+  user: 1,
+  description: "LOVEIT",
+  rating: 5,
+})
+
+Review.create!({
+  product: 10,
+  user: 1,
+  description: "It's 'meh'.'",
+  rating: 3,
+})
+
+Review.create!({
+  product: 11,
+  user: 1,
+  description: "Great thing I got in the mail!",
+  rating: 4,
+})
+
+Review.create!({
+  product: 12,
+  user: 1,
+  description: "I got it for my birthday and it's great",
+  rating: 4,
+})
+
+Review.create!({
+  product: 13,
+  user: 1,
+  description: "It's 'meh'.'",
+  rating: 3,
+})
+
 
 puts "DONE!"
