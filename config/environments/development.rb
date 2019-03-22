@@ -1,4 +1,16 @@
 Rails.application.configure do
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.ethereal.email',
+      :port                 => 587,
+      :domain               => 'ethereal.email',
+      :user_name            => <stan.walker@ethereal.email>,
+      :password             => <vyU6zjY4H2N7KKu1Fd>,
+      :authentication => 'plain',
+      :enable_starttls_auto => true
+}
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

@@ -11,8 +11,9 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
-      puts "---------order--------"
-      puts order.inspect
+      @order_table_data = retrieve_products(order.line_items)
+      # UserReceipt.with(user: User.find_by_email(order.email)).welcome_email
+      UserReceipt.welcome_email(order.email, order, @order_table_data).deliver
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
