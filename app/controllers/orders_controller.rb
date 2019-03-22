@@ -60,10 +60,11 @@ class OrdersController < ApplicationController
   end
 
   def retrieve_products(items)
-    products = []
-    items.each do |product|
-      products.push Product.find(product[:id])
+    product_ids = []
+    items.each do |item|
+      product_ids.push item[:product_id]
     end
+    Product.find(product_ids)
   end
 
 end
