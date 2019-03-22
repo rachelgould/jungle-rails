@@ -1,6 +1,11 @@
 class CartsController < ApplicationController
 
   def show
+    if session[:user_id]
+      @user_email = User.find_by_id(session[:user_id]).email
+    else
+      @user_email = "guest@guest.com"
+    end
   end
 
   def add_item
