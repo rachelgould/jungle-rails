@@ -2,7 +2,7 @@ Your Receipt for Order <%= @order.id %>:
 ==========================================
 Order total: <%= humanized_money_with_symbol @order.total_cents/100 %>
 ------------------------------------------
-<% @order_table_data.each do |product| %>
+<% @order_details.each do |product| %>
   <%= product[:name] %>
   Quantity: <%= product[:quantity] %>
   <%= humanized_money_with_symbol product[:line_total] %>

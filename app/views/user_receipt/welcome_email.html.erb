@@ -9,9 +9,9 @@
       <b>Order total: <%= humanized_money_with_symbol @order.total_cents/100 %></b>
     </p>
     <% @order_details.each do |product| %>
-      <p><h4><%= product[:name] %></h4></p>
-      Quantity: <%= product[:quantity] %>
-      <%= humanized_money_with_symbol product[:line_total] %>
+      <h4><%= product[:name] %></h4>
+      <p>Quantity: <%= product[:quantity] %>
+      <%= humanized_money_with_symbol product[:line_total] %></p>
     <% end %>
   </body>
 </html>

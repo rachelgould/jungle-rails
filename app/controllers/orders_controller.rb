@@ -11,8 +11,8 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
-      @order_table_data = retrieve_products(order.line_items)
-      UserReceipt.welcome_email(order.email, order, @order_table_data).deliver
+      @order_table_data = retrieve_products_basic_info(order.line_items)
+      UserReceipt.welcome_email(order.email, order, @order_table_data).deliver_later
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
@@ -68,6 +68,20 @@ class OrdersController < ApplicationController
         img: product.image.tiny, 
         name: product.name,
         description: product.description,
+        quantity: item.quantity,
+        line_total: item.total_price_cents / 100
+      }
+      order_products.push obj
+    end
+    return order_products
+  end
+
+  def retrieve_products_basic_info(items)
+    order_products = []
+    items.each do |item|
+      product = Product.find(item[:product_id])
+      obj = { 
+        name: product.name,
         quantity: item.quantity,
         line_total: item.total_price_cents / 100
       }
