@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Your Receipt for Order <%= @order.id %></h1>
+    <p>
+      <b>Order total: <%= humanized_money_with_symbol @order.total_cents/100 %></b>
+    </p>
+    <% @order_details.each do |product| %>
+      <p><h4><%= product[:name] %></h4></p>
+      Quantity: <%= product[:quantity] %>
+      <%= humanized_money_with_symbol product[:line_total] %>
+    <% end %>
+  </body>
+</html>
