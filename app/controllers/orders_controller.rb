@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @products = retrieve_products(@order.line_items)
+    @line_items = @order.line_items
+    @order_table_data = retrieve_products(@line_items)
   end
 
   def create
@@ -60,11 +61,19 @@ class OrdersController < ApplicationController
   end
 
   def retrieve_products(items)
-    product_ids = []
+    order_products = []
     items.each do |item|
-      product_ids.push item[:product_id]
+      product = Product.find(item[:product_id])
+      obj = { 
+        img: product.image.tiny, 
+        name: product.name,
+        description: product.description,
+        quantity: item.quantity,
+        line_total: item.total_price_cents / 100
+      }
+      order_products.push obj
     end
-    Product.find(product_ids)
+    return order_products
   end
 
 end

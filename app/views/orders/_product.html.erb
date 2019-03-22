@@ -1,22 +1,14 @@
 <tr>
-  <td>
-    <%= image_tag product.image.tiny %>
-  </td>
-  <td>
-    <h4><%= product.name %></h4>
+  <td colspan="2">
+    <%= image_tag product[:img] %>
+    <h4><%= product[:name] %></h4>
     <br>
-    <p><%= product.description %></p>
+    <p><%= product[:description] %></p>
   </td>
   <td>
-    <%= product.category.name %>
+    <%= humanized_money_with_symbol product[:line_total] %>
   </td>
   <td>
-    <%= product.price %>
-  </td>
-  <td>
-    <%= product.quantity %>
-  </td>
-  <td>
-    <%= link_to fa_icon('trash'), [:admin, product], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= product[:quantity] %>
   </td>
 </tr>
