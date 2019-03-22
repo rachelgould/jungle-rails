@@ -6,6 +6,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
+    @reviews = Review.find_by(product_id: @product.id)
+    puts "-------------------reviewssss"
+    puts "for this product", @product.inspect
+    puts "with this id", @product.id
+    puts "this is reviews", @reviews.inspect
   end
 
 end

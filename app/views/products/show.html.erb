@@ -26,6 +26,16 @@
       </div>
     </div>
 
+    <div class="row">
+    <h2>User Reviews:</h2>
+    <hr />
+    <% if @reviews == nil %>
+      <p>No reviews yet.</p>
+    <% else %>
+        <%= render @reviews %>
+    <% end %>
+    </div>
+
   </article>
 
 </section>
