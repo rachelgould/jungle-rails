@@ -8,6 +8,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     if @review.save
       redirect_to :back
+    else
+      redirect_to :back 
     end
   end
 
