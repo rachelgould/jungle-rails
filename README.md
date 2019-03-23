@@ -82,3 +82,13 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Sass
 
 # Screenshots
+
+![Products home](https://github.com/rachelgould/jungle-rails/blob/master/Screenshots/Screen%20Shot%202019-03-22%20at%206.33.36%20PM.png?raw=true)
+
+![Sold out product](https://github.com/rachelgould/jungle-rails/blob/master/Screenshots/Screen%20Shot%202019-03-22%20at%206.33.43%20PM.png?raw=true)
+
+![Product view](https://github.com/rachelgould/jungle-rails/blob/master/Screenshots/Screen%20Shot%202019-03-22%20at%206.34.06%20PM.png?raw=true)
+
+![Cart view](https://github.com/rachelgould/jungle-rails/blob/master/Screenshots/Screen%20Shot%202019-03-22%20at%206.34.26%20PM.png?raw=true)
+
+![Order view](https://github.com/rachelgould/jungle-rails/blob/master/Screenshots/Screen%20Shot%202019-03-22%20at%206.34.59%20PM.png?raw=true)
