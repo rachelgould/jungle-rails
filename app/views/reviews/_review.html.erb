@@ -1,5 +1,5 @@
 <div>
-<h4><%= User.find_by(id: review.user_id).name %></h4>
+<h4><%= User.find_by(id: review.user_id).name || "Anonymous" %></h4>
 <p><%= review.description %></p>
 <h3><%= "*" * review.rating.to_i %></h3>
 <p><%= review.created_at %></p>
