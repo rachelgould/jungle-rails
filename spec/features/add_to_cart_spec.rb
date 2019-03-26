@@ -26,6 +26,6 @@ RSpec.feature "Visit adds items to cart from the homepage", type: :feature, js:t
     save_screenshot
 
     # VERIFY
-    expect(page).to have_text 'My Cart (1)'
+    expect(page.find 'nav').to have_text 'My Cart (1)'
   end
 end
