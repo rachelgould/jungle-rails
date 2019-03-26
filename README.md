@@ -54,6 +54,11 @@ There were numerous feature requests and bug fixes to be completed for this proj
 * As a logged in user I can rate & review a product in a single step
 * As a logged in user I can delete a rating or review that I previously created
 
+#### Feature: Use Rspec for Testing
+
+* Learn how to use Rspec to create unit tests as well as feature tests using Capybara, Poltergeist and PhantomJS
+* I wrote tests for key features and models
+
 ## Setup
 
 1. Fork & Clone
